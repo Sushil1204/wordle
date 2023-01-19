@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
+import Grid from "./components/Grid/Grid";
+// import Row from "./components/Grid/Row";
 
 function App() {
-
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+    <div className="">
+      <Grid/>
+    </div>
+  );
 }
 
-export default App
+export default App;
