@@ -3,6 +3,7 @@ import Board from "./components/Board";
 import { createContext } from "react";
 import words from "./words";
 import _ from 'lodash';
+import { ThemeProvider } from "./Context/ThemeContext";
 
 export const WordleContext = createContext()
 
@@ -31,19 +32,21 @@ function App() {
     setGuessWord(guessWord.slice(0, guessWord.length - 1));
   }
   return (
-    <div className='grid justify-center text-center min-h-screen m-0 p-0 dark:bg-zinc-800'>
-      <WordleContext.Provider value={{
-        guessTheWord,
-        pressEnter,
-        completedRows,
-        currentRow,
-        word,
-        guessWord,
-        backspace
-      }}>
-        <Board />
-      </WordleContext.Provider>
-    </div>
+    <ThemeProvider>
+      <div className='grid justify-center text-center min-h-screen m-0 p-0 dark:bg-zinc-800'>
+        <WordleContext.Provider value={{
+          guessTheWord,
+          pressEnter,
+          completedRows,
+          currentRow,
+          word,
+          guessWord,
+          backspace
+        }}>
+          <Board />
+        </WordleContext.Provider>
+      </div>
+    </ThemeProvider>
 
   );
 }
