@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Grid from './Grid/Grid'
+import Help from './Help'
 import KeyBoard from './Keyboard/KeyBoard'
+import Model from './Model'
+import Navbar from './Navbar'
 
 const Board = () => {
+  const [help, setHelp] = useState(false)
   return (
-    <div className='flex flex-col justify-center items-center'>
-      <h1 className='font-extrabold text-5xl m-4 text-center'>WORDLE</h1>
+    <>
+    {help &&(
+      <Model title="How to play !" setHelp={setHelp}>
+        <Help/>
+      </Model>
+    )}
+    <div className='min-w-[80vw]'>
+     <Navbar setHelp={setHelp}/>
       <Grid />
       <KeyBoard/>
     </div>
+    </>
   )
 }
 

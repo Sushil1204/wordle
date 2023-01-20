@@ -21,7 +21,7 @@ function App() {
     if (guessWord.length < 5) return
     if (!words.includes(guessWord.toLowerCase())) return alert("Word not found !");
     if (guessWord == word) alert("You Won 😃 ");
-    if(currentRow > 5) return alert('You have unfortunately exhausted all your trials. Press refresh to try again. ')
+    if (currentRow > 5) return alert('You have unfortunately exhausted all your trials. Press refresh to try again. ')
 
     setCurrentRow(currentRow + 1);
     setCompletedRows([...completedRows, currentRow]);
@@ -31,15 +31,20 @@ function App() {
     setGuessWord(guessWord.slice(0, guessWord.length - 1));
   }
   return (
-    <WordleContext.Provider value={{ guessTheWord ,
-      pressEnter ,
-       completedRows ,
-        currentRow, 
-        word ,
-        guessWord ,
-         backspace }}>
-<Board/>
-    </WordleContext.Provider>
+    <div className='grid justify-center text-center min-h-screen m-0 p-0 dark:bg-zinc-800'>
+      <WordleContext.Provider value={{
+        guessTheWord,
+        pressEnter,
+        completedRows,
+        currentRow,
+        word,
+        guessWord,
+        backspace
+      }}>
+        <Board />
+      </WordleContext.Provider>
+    </div>
+
   );
 }
 
