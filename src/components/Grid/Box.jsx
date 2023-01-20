@@ -35,9 +35,9 @@ const Box = ({id,rowId}) => {
   return (
     <div
       style={style}
-      className="flex justify-center my-[2px] m-[2px] items-center  w-[62px] h-[62px] border-2 border-slate-700"
+      className="flex justify-center p-0 m-0 items-center  w-14 h-14 border-2 border-slate-700"
     >
-      <p className="flex self-center mb-2 font-bold text-5xl">{letter}</p>
+      <p className="flex place-self-center mb-2 font-bold text-3xl">{letter}</p>
     </div>
   );
 };

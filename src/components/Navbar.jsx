@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillSetting, AiOutlineInfoCircle } from 'react-icons/ai';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 import ThemeToggle from './ThemeToggle';
 const Navbar = ({setHelp}) => {
   return (

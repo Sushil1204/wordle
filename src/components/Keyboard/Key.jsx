@@ -5,7 +5,7 @@ const Key = (props) => {
   const {guessTheWord , backspace , pressEnter} = useContext(WordleContext)
 
     function handleClickForBig() {
-        if (props.letter == "Enter") {
+      if (props.letter == "Enter") {
             pressEnter();
         } else {
             backspace();
@@ -15,7 +15,7 @@ const Key = (props) => {
   if (props.big) {
     return (
       <button
-        className="grid place-items-center bg-[#d3d6da] text-black cursor-pointer font-bold text-xl m-2 rounded-md h-[58px] w-min px-4 border-2 border-solid border-slate-700 outline-none shadow-md hover:shadow-slate-500"
+        className="w-fit px-4 h-14 bg-gray-200 hover:bg-gray-300 grid items-center rounded font-semibold cursor-pointer border border-slate-700 mr-3 hover:shadow-xl hover:shadow-slate-800"
         onClick={()=>handleClickForBig()}
       >
         {props.letter}
@@ -24,7 +24,7 @@ const Key = (props) => {
   }
   return (
     <button
-      className="grid place-items-center bg-[#d3d6da] text-black cursor-pointer font-bold text-xl m-2 rounded-md h-[58px] w-[43px] border-2 border-solid border-slate-700 outline-none shadow-md hover:shadow-slate-500"
+      className="w-9 h-14 bg-gray-200 hover:bg-gray-300 grid items-center rounded font-semibold cursor-pointer border border-slate-700 mr-3 hover:shadow-xl hover:shadow-slate-800"
       onClick={()=>guessTheWord(props.letter)}
     >
       {props.letter}
